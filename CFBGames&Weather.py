@@ -9,7 +9,8 @@ load_dotenv("CFBData.env")
 
 auth_token = os.getenv('auth_token')
  
-api_urls = ["https://api.collegefootballdata.com/games?year=2022", "https://api.collegefootballdata.com/games/weather?year=2022"]
+api_urls = ["https://api.collegefootballdata.com/games?year=2022", "https://api.collegefootballdata.com/games/weather?year=2022",
+"https://api.collegefootballdata.com/lines?year=2022"]
 
 token = {
     'Authorization': "Bearer "  + auth_token,
@@ -18,7 +19,7 @@ token = {
 
 number = 1
 
-while number < 3:
+while number < 4:
     for api_url in api_urls:
         response = requests.get(url=api_url, headers=token)
         response_dict = response.json()
