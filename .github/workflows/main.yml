@@ -140,7 +140,7 @@ jobs:
           sudo mv tflint /usr/local/bin/
 
       - name: Run TFLint
-        run: tflint
+        run: tflint --deep
 
   apply:
     name: Apply Terraform
